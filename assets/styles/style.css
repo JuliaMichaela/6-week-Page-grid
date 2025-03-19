@@ -3,21 +3,78 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
+    line-height: 50px;
     text-align: center;
 }
 
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 15vh auto 15vh;
+    grid-template-areas: 
+    "header header header"
+    "main-part main-part aside"
+    "footer footer footer";
+}
 
 .header {
-    width: 100vw;
-    height: 15vh;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    grid-area: header;
     background-color: #ccc;
 }
 
-.container {
+.main-part {
+    grid-area: main-part;
     display: grid;
-    width: 100vw;
-    height: 65vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #fdf2d5;
+}
+
+.main-block {
+    grid-column: 1 / 3;
+    grid-row: 1 ;
+}
+
+.block-one {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: 20px;
+    padding: 30px 0px;
+    background: #f5c17c;
+}
+
+.block-two {
+    grid-column: 2/ 3;
+    grid-row: 2 / 3;
+    margin: 20px;
+    padding: 30px 0px;
+    background: #f5c17c;
+}
+
+.block-three {
+    grid-column: 1/ 3;
+    grid-row: 3 ;
+    margin: 20px;
+    padding: 30px 0px;
+    background: #f5c17c;
+}
+
+.side-part {
+    grid-area: aside;
+    background: #d9edc5;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #ddd; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 20px;
+}
+
+.footer-section {
+    background: #f2f2f2; 
+    margin: 20px;
+    padding: 30px 0px;
 }
